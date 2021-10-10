@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temperture Checker</title>
+</head>
+<style>
+    .styling {
+        border: 3px solid gray;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+    }
+
+    .styling input {
+        width: 280px;
+    }
+</style>
+
+<body>
+    <div class="styling">
+        <h1>jacket Checker: should i carry jacket today</h1>
+        <!-- jacket Checker: should i carry jacket today
+        user will be asked for the current Temperture
+        if 25 don't carry
+        if less than 25 carry jacket
+        if less than 15 carry coat
+        if 0 or less  don't go out -->
+        <input type="number" id=num placeholder="Check Temperature as per your requirement">
+        <button onclick="check()">Check</button>
+        <h1 id="result"></h1>
+    </div>
+
+
+    <script>
+        function check() {
+            let tem = document.getElementById('num').value
+            if (tem == 25) {
+                document.getElementById('result').innerText = "Don't Carry Jacket";
+            }
+
+            else if (tem <= 25) {
+                document.getElementById('result').innerText = "PLz Carry Jacket";
+            }
+
+            else if ((tem <= 15 && tem == 15)) {
+                document.getElementById('result').innerText = "PLz Carry Coat";
+            }
+            else if ((tem <= 0 && tem == 0)) {
+                document.getElementById('result').innerText = "PLz Don't go Outside";
+            }
+            else {
+                alert("Stay Home Stay Safe");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Converter</title>
+</head>
+
+<style>
+    #fill {
+        border: 3px solid grey;
+    }
+
+    .mid {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+</style>
+
+<body>
+
+    <section id="fill">
+        <div class="mid">
+            <h1>Currency Converter</h1>
+            <input type="number" id="num">
+            <select name="current" id="money">
+                <option value="dollar">United State Dollar</option>
+                <option value="india">India</option>
+                <option value="dinar">Kuwaiti Dinar</option>
+                <option value="riyal">Omani riyal</option>
+            </select>
+            <button onclick="connect()">Convert</button>
+            <br>
+            <h1 id="result"></h1>
+            <h2 id="currency"></h2>
+        </div>
+
+    </section>
+
+
+
+
+    <script>
+        function connect() {
+
+            let currency = document.getElementById('money').value
+            if (currency === "dollar") {
+                let num1 = document.getElementById('num').value
+                let num2 = (170.81).toFixed();
+                let result = document.getElementById('result').innerText = `${num1} Dollar to Pkr ` + ` ` + Number(num1) * Number(num2);
+            }
+
+            else if (currency === "india") {
+                let num1 = document.getElementById('num').value
+                let num2 = (2.27).toFixed();
+                let result = document.getElementById('result').innerText = `${num1} Indian Rupee to Pkr` + ` ` + Number(num1) * Number(num2);
+            }
+
+            else if (currency === "dinar") {
+                let num1 = document.getElementById('num').value
+                let num2 = (565.43).toFixed();
+                let result = document.getElementById('result').innerText = `${num1} kuwaiti dinar  to Pkr ` + ` ` + Number(num1) * Number(num2);
+            }
+
+            else if (currency === "riyal") {
+                let num1 = document.getElementById('num').value
+                let num2 = (442.86).toFixed();
+                let result = document.getElementById('result').innerText = `${num1} omani riyal to Pkr ` + ` ` + Number(num1) * Number(num2);
+            }
+            else {
+                console.log("Sorry...! We have no Converter at this time...");
+            }
+            console.log("Convert into", currency);
+        }
+    </script>
+
+</body>
+
+</html>
